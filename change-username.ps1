@@ -53,3 +53,6 @@ catch {
     Write-Host "Done with errors, check log file"
 }
 
+# Disconnect from Microsoft Graph
+Disconnect-MgGraph
+Write-Host "Disconnected from Microsoft Graph."
