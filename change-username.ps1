@@ -39,11 +39,11 @@ try {
 }
 
 # Define the User Principal Name (UPN) or Id of the user
-$userId = "abc@dph.sc.gov"
+$userId = "username@domain.com"
 
 try {
     # Attempt to update the user's User Principal Name
-    Update-MgUser -UserId $userId -UserPrincipalName "asarej@dhec.sc.gov"
+    Update-MgUser -UserId $userId -UserPrincipalName "newUPN@domain.com"
     Get-Log -LogFilePath $logFilePath -LogMessage "User's User Principal Name updated successfully."
     Write-Host "Done, check the log file"
 }
