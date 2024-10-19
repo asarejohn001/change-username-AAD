@@ -22,8 +22,10 @@ function Get-Log {
     Add-Content -Path $LogFilePath -Value $logEntry
 }
 
-# Define the log file path
-$logFilePath = ".\log.txt"
+# Set variables
+$logFilePath = ".\log.txt" # location for the log file
+$userId = "username@domain.com" # The current user-id
+$newUPN = "newUPN@domain.com" # The new user-id
 
 # Connect to AAD
 try {
@@ -34,16 +36,13 @@ try {
 } catch {
     # Handle the error if connection fails
     Get-Log -LogFilePath $logFilePath -LogMessage "Failed to connect to AAD. Exiting script. Error details: $_"
-    Write-Host "Couldn't connect to EXO. Check log file"
+    Write-Host "Couldn't connect to ADD. Check log file"
     exit
 }
 
-# Define the User Principal Name (UPN) or Id of the user
-$userId = "username@domain.com"
-
 try {
     # Attempt to update the user's User Principal Name
-    Update-MgUser -UserId $userId -UserPrincipalName "newUPN@domain.com"
+    Update-MgUser -UserId $userId -UserPrincipalName $newUPN
     Get-Log -LogFilePath $logFilePath -LogMessage "User's User Principal Name updated successfully."
     Write-Host "Done, check the log file"
 }
