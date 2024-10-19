@@ -2,7 +2,7 @@
 Name: John Asare
 Date: 09/11/2024
 
-Des: Read more about this code from 
+Des: Read more about this code from https://github.com/asarejohn001/change-username-AAD/edit/main/change-username.ps1
 #>
 
 # Import module
