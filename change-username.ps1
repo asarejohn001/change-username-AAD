@@ -27,7 +27,7 @@ $logFilePath = ".\log.txt"
 
 # Connect to AAD
 try {
-    # Attempt to connect to Exchange Online
+    # Attempt to connect to ADD
     Connect-MgGraph -Scopes "User.ReadWrite.All","Group.ReadWrite.All"
     Get-Log -LogFilePath $logFilePath -LogMessage "Successfully connected to AAD."
     
